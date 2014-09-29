@@ -20,7 +20,7 @@ function createGraph() {
     .sort(null)  // disable sorting, use DOM tree traversal
     .size([width, height])  // chart layout size
     .padding(1)  // padding between circles
-    .radius(function(d) { return 20 + (sizeOfRadius(d) * 30); });  // radius for each circle
+    .radius(function(d) { return 20 + (sizeOfRadius(d) * 60); });  // radius for each circle
 
   // svg config
   var svg = d3.select("#chart").append("svg") // append to DOM
