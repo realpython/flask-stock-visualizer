@@ -1,0 +1,4 @@
+*.DS_Store
+*.pyc
+bower_components
+readme.md
