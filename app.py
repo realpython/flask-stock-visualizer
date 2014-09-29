@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify
 from stock_scraper import get_data
+import os
 
 
 app = Flask(__name__)
@@ -14,8 +15,6 @@ def data():
 def index():
     return render_template("index.html")
 
-
-import os
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
