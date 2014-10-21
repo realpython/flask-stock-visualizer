@@ -1,8 +1,12 @@
 box: wercker/python
 build:
   steps:
-    - pip install -r requirements.txt
-    - python tests.py
+    - script:
+        name: Install requirements
+        code: pip install -r requirements.txt
+    - script:
+        name: Run tests
+        code: python tests.py
 deploy:
   steps:
     - add-to-known_hosts:
