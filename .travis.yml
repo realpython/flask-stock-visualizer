@@ -22,4 +22,4 @@ after_success:
   - git remote add dokku dokku@192.241.208.61:app_name
   - git add .
   - git commit -am "yay!"
-  - git push deploy
+  - git push dokku master
