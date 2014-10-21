@@ -4,6 +4,11 @@ language:
 python:
   - "2.7"
 
+# activate virtualenv
+env:
+  - virtualenv env
+  - source env/bin/activate
+
 # install dependencies
 install:
   - npm install bower
