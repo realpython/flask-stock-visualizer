@@ -1,21 +1,16 @@
-# specify language
 language:
-  - python
-
-# specify python versions
+- python
 python:
-  - "2.6"
-  - "2.7"
-
-# install dependencies
+- '2.6'
+- '2.7'
 install:
-  - pip install -r requirements.txt
-
-# run tests
+- pip install -r requirements.txt
 script:
-  - python tests.py
-
+- python tests.py
 deploy:
   provider: heroku
-  api_key: e2b5aaa0cb18d81d760472099e0bf2f509a91b97
+  api_key:
+    secure: Kq95wr8v6rGlspuTt3Y8NdPse2eandSAF0DGmQm+eIu8HrVooVKKZ8EzTEpj6/N1A0tVdVU4lSXnsdq2XjssllEtxwj3i3vF1sQmybpPT/zkOTiKX/y8n7MvSrfw/0ZMmPiT2VYjMuo6myNg0N3FZVp7wZQGcNwflr3b9Hd49xE=
   app: flask-stock
+  on:
+    repo: realpython/flask-stock-visualizer
