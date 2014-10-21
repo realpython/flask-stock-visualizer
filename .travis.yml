@@ -3,6 +3,7 @@ python:
   - "2.7"
 
 # active virtualenv
+env:
   - virtualenv env
   - source env/bin/activate
 
