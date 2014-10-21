@@ -10,6 +10,7 @@ python:
 # authorize ssh auth requests
 before_script:
   - echo -e "Host 192.241.208.61\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - ssh-add ${KEY}
 
 # install dependencies
 install:
@@ -23,6 +24,7 @@ script:
 
 # deployment
 after_success:
+  - cat $DEPLOY_KEY > .travis/deploy_key.pem
   - git remote add dokku dokku@192.241.208.61:app_name
   - git add .
   - git commit -am "yay!"
