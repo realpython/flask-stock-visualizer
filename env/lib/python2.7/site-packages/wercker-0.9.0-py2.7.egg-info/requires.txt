@@ -1,0 +1,10 @@
+dulwich>=0.9.1
+docopt>=0.6.0
+blessings>=1.5
+humanize>=0.5
+requests>=1.2.0
+semantic_version==2.2.0
+PyYAML>=3.10
+
+[test]
+httpretty

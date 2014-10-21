@@ -1,0 +1,88 @@
+#!/Users/michaelherman/Documents/repos/realpython/flask-stock-visualizer/env/bin/python
+"""
+
+Usage:
+    wercker create
+    wercker status
+    wercker deploy
+    wercker builds
+    wercker open
+    wercker open targets
+    wercker queue
+    wercker apps
+    wercker link
+    wercker login
+    wercker logout
+    wercker targets add
+    wercker targets list
+    wercker targets details
+    wercker update
+    wercker services add <name> [<version>]
+    wercker services remove <name>
+    wercker services search [<name>]
+    wercker services info <name> [<version>]
+    wercker services
+    wercker --version
+    wercker --help
+
+Details:
+    create                              - Adds an application to wercker
+    status                              - shows the status of the most recent
+                                          build
+    deploy                              - deploy a build to a deploy target
+    login                               - Logs the user in and stores the token
+                                          on the machine
+    logout                              - Removes the login token from the
+                                          machine
+    open                                - opens a webpage showing the current
+                                          app
+    open targets                        - opens a webpage showing a deploy
+                                          target's details
+    apps                                - List apps the user has access to
+    link                                - link repository back up to an app on
+                                          wercker
+    builds                              - shows a list of the most recent
+                                          builds
+    targets add                         - add a heroku targets as a
+                                          deploy target
+    targets list                        - lists all deploy targets
+    targets details                     - alias for open targets
+    services                            - list services specified in the
+                                          wercker.yml
+    services add <name> [<version>]     - add a service to your
+                                          wercker.yml
+    services remove <name>              - remove a service from your
+                                          wercker.yml
+    services search [<name>]            - find a service
+    services info <name> [<version>]    - display detailed information for
+                                          service
+"""
+
+# todo:
+#    wercker targets <name>
+#    wercker jobs -> jobs page on beta.wercker.com
+
+import docopt
+
+from werckercli.cli import (
+    # get_parser,
+    handle_commands,
+    get_intro,
+)
+from werckercli.metrics import (
+    track_application_startup,
+)
+
+import werckercli
+
+track_application_startup()
+
+print(get_intro())
+
+args = docopt.docopt(
+    __doc__,
+    version="version " + werckercli.__version__,
+    help=True
+)
+
+handle_commands(args)

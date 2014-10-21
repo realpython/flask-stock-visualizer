@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: wercker
+Version: 0.9.0
+Summary: wercker command line interface
+Home-page: http://beta.wercker.com/
+Author: jacco @ wercker
+Author-email: jacco@wercker.com
+License: MIT license
+Description: 
+              Simple command line interface for the wercker website.
+              
+Keywords: cli,command line
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: Utilities
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX

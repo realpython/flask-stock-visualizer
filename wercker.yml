@@ -1,0 +1,28 @@
+box: wercker/python
+build:
+  steps:
+    - pip install -r requirements.txt
+    - python tests.py
+deploy:
+  steps:
+    - add-to-known_hosts:
+        hostname: 192.241.208.61
+    - add-ssh-key:
+        keyname: DOKKU
+    - script:
+        name: Initialize new repository
+        code: |
+          rm -rf .git
+          git init
+          git config --global user.name "mjhea0"
+          git config --global user.email "hermanmu@gmail.com"
+          git remote add dokku dokku@192.241.208.61:app_name
+    - script:
+        name: Add everything to the repository
+        code: |
+          git add - A
+          git commit -am "Result of deploy $WERCKER_GIT_COMMIT"
+    - script:
+        name: Push to dokku
+        code: |
+          git push dokku master
