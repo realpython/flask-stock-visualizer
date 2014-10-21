@@ -14,3 +14,8 @@ install:
 # run tests
 script:
   - python tests.py
+
+deploy:
+  provider: heroku
+  api_key: e2b5aaa0cb18d81d760472099e0bf2f509a91b97
+  app: flask-stock
