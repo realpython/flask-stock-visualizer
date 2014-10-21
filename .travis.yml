@@ -1,13 +1,11 @@
+# specify language
 language:
   - python
 
+# specify python versions
 python:
+  - "2.6"
   - "2.7"
-
-# activate virtualenv
-env:
-  - virtualenv env
-  - source env/bin/activate
 
 # install dependencies
 install:
