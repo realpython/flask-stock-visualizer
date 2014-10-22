@@ -6,9 +6,9 @@ import os
 app = Flask(__name__)
 
 
-# @app.route("/data")
-# def data():
-#     return jsonify(get_data())
+@app.route("/data")
+def data():
+    return jsonify(get_data())
 
 
 @app.route("/")
