@@ -10,6 +10,7 @@ def test():
 
 
 def deploy():
+    test()
     local("git push dokku master")
 
 
@@ -19,5 +20,6 @@ def commit():
 
 
 def push():
+    local("git branch")
     branch = raw_input("Which branch do you want to push to? ")
     local("git push origin {}".format(branch))
